@@ -1,0 +1,2 @@
+# omal
+Knowledge sharing | IT
