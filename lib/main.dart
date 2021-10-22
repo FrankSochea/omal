@@ -13,7 +13,10 @@ class Omal extends StatelessWidget {
       onGenerateTitle: (context) => "Omal App",
       initialRoute: RouteGenerator.homeScreen,
       onGenerateRoute: RouteGenerator
-          .generateRoute, // Hides the debug stripe on the top-right corner //// which might be annoying to see! debugShowCheckedModeBanner: false,
+          .generateRoute,
+          // Hides the debug stripe on the top-right corner //
+          // which might be annoying to see!
+          debugShowCheckedModeBanner: false,
     );
   }
 }
