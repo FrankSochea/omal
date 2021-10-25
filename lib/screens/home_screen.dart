@@ -1,33 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:newomal/routes.dart';
+import 'package:newomal/widgets/home_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Omal Cambodia"), actions: [
-        IconButton(
-          icon: const Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(Icons.info),
-          ),
-          onPressed: () {},
-        ),
-      ]),
-      drawer: Drawer(
-          child: ListView(children: [
-        ListTile(
-          leading: const Icon(Icons.people),
-          title: const Text("Item 1"),
-          onTap: () {},
-        ),
-        ListTile(
-          leading: const Icon(Icons.train),
-          title: const Text("Item 2"),
-          onTap: () {},
-        )
-      ])),
+      appBar: homeAppBar(),
+      // drawer: Drawer(
+      //     child: ListView(children: [
+      //   ListTile(
+      //     leading: const Icon(Icons.people),
+      //     title: const Text("Item 1"),
+      //     onTap: () {},
+      //   ),
+      //   ListTile(
+      //     leading: const Icon(Icons.train),
+      //     title: const Text("Item 2"),
+      //     onTap: () {},
+      //   )
+      // ])),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
         selectedItemColor: Colors.amber,
@@ -51,4 +44,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }

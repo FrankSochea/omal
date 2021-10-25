@@ -16,7 +16,7 @@ class Omal extends StatelessWidget {
           .generateRoute,
           // Hides the debug stripe on the top-right corner //
           // which might be annoying to see!
-          debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
