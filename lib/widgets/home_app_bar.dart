@@ -3,6 +3,7 @@ import 'package:newomal/constants.dart';
 
 AppBar homeAppBar() {
     return AppBar(
+      backgroundColor: oPrimaryColor,
       title: Container(
         margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
