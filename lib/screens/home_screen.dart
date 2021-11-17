@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newomal/constants.dart';
+import 'package:newomal/routes.dart';
 import 'package:newomal/widgets/category_item.dart';
 import 'package:newomal/widgets/home_app_bar.dart';
 import 'package:newomal/widgets/item_list.dart';
@@ -76,24 +77,27 @@ class HomeScreen extends StatelessWidget {
           ,SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child:  Row(
-              children: const <Widget>[
+              children:  <Widget>[
                  ItemList(
                    srcSvg: "assets/images/frank-sochea-flutter.svg",
                    title: "[Flutter] Mobile App Development",
                    trainer: "Frank Sochea",
                    rating: 4.7,
+                   press: () { Navigator.of(context).pushNamed(RouteGenerator.itemDetailScreen); },
                  ),
                  ItemList(
                    srcSvg: "assets/images/drupal-training.svg",
                    title: "[Drupal] Content Management System",
                    trainer: "Drupal Trainer",
                    rating: 4.8,
+                   press: () {},
                  ),
                  ItemList(
                    srcSvg: "assets/images/nodejs-training.svg",
                    title: "[Nodejs] Scalable Network Applications",
                    trainer: "Frank Sochea",
-                   rating: 4.9
+                   rating: 4.9,
+                   press: () {},
                  )
               ],
             ),

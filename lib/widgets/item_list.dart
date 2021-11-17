@@ -9,13 +9,15 @@ class ItemList extends StatelessWidget {
   final String title;
   final String trainer;
   final double rating;
+  final Function()? press;
 
   const ItemList({
     Key? key,
     required this.srcSvg,
     required this.title,
     required this.trainer,
-    this.rating = 0.0 ,
+    this.rating = 0.0,
+    this.press
   }) : super(key: key);
 
 
@@ -38,7 +40,7 @@ class ItemList extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: press,
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: Column(
