@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:newomal/constants.dart';
+import 'package:newomal/localization/localization_constants.dart';
+import 'package:newomal/main.dart';
+import 'package:newomal/widgets/language.dart';
 
-AppBar homeAppBar() {
+AppBar homeAppBar(context) {
+  void _changeLanguage(Language language) async {
+    Locale _locale = await setLocale(language.languageCode);
+    Omal.setLocale(context, _locale);
+  }
+
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: oPrimaryColor,
       title: Container(
         margin: const EdgeInsets.all(20),
@@ -36,7 +45,39 @@ AppBar homeAppBar() {
             )
           ]
         ),
-      )
+      ),
+      actions: <Widget> [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: DropdownButton<Language>(
+            underline: const SizedBox(),
+            icon: const Icon(
+              Icons.language,
+              color: Colors.white,
+            ),
+            onChanged: (language) {
+              _changeLanguage(language!);
+            },
+            items: Language.languageList()
+                .map<DropdownMenuItem<Language>>(
+                  (e) => DropdownMenuItem<Language>(
+                    value: e,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Text(
+                          e.flag,
+                          style: const TextStyle(fontSize: 30),
+                        ),
+                        Text(e.name)
+                      ],
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        ),
+      ]
 
     );
   }

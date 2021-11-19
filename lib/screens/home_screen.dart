@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:newomal/constants.dart';
+import 'package:newomal/localization/localization_constants.dart';
 import 'package:newomal/routes.dart';
 import 'package:newomal/widgets/category_item.dart';
 import 'package:newomal/widgets/home_app_bar.dart';
@@ -12,10 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
     return Scaffold(
-      appBar: homeAppBar(),
+      appBar: homeAppBar(context),
       // drawer: Drawer(
       //     child: ListView(children: [
       //   ListTile(
@@ -33,13 +29,13 @@ class HomeScreen extends StatelessWidget {
         currentIndex: 1,
         selectedItemColor: Colors.amber,
         onTap: (int index) {},
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home page"),
+            icon: const Icon(Icons.home),
+            label: getTranslated(context, "home_label")),
           BottomNavigationBarItem(
-            icon: Icon(Icons.email),
-            label: "E-mail",
+            icon: const Icon(Icons.email),
+            label: getTranslated(context, "email_label"),
           ),
         ],
       ),
